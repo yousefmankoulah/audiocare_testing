@@ -105,6 +105,15 @@ test.describe('check all the functions on the website', async () => {
         await page.getByPlaceholder('Search').click();
         await page.getByPlaceholder('Search').fill('Denver');
         await page.getByRole('button', { name: 'Search' }).click();
+          //delete input value
+        await page.getByPlaceholder('Search').dblclick();
+        await page.keyboard.press('Backspace');
+
+        //search by department
+        await page.getByPlaceholder('Search').click();
+        await page.getByPlaceholder('Search').fill('DOD');
+        await page.getByRole('button', { name: 'Search' }).click();
+
         
         //Logout 
         await page.getByRole('link', { name: 'logout (current)' }).click();
